@@ -42,6 +42,8 @@ pnpm dev
 
 ## การทำงาน
 
+![JOSE ECDH Flow](./public/jose_ecdh_flow.svg)
+
 1. **Server boot** — `EcKeysService.onModuleInit()` สร้าง EC P-256 key pair
 2. **Client load** — `usePublicKey()` fetch `GET /crypto/public-key` (JWK)
 3. **Encrypt** — `encryptPayload()` ใน `@repo/jose-utils` สร้าง ephemeral key → ECDH derive → wrap CEK → A256GCM encrypt → compact JWE
